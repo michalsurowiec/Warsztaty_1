@@ -1,12 +1,13 @@
 package michalsurowiec.workshops;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-//wersja 0.4.0
+
 public class LottoSimulator {
 
     public static void main(String[] args) {
-        System.out.println("Cześć! Zapraszam do Symulatora Lotto! Zasady są proste: wpisz liczbę od 1 do 49 i zatwierdź. \nPo zebraniu 6 liczb wylosujemy dla ciebie liczby i porównamy. Kupon od 3 liczb w górę wygrywa! \nJeżeli chcesz opuścić grę, wpisz quit zamiast liczby i zatwierdź. \nMiłej zabawy!");
+        System.out.println("Cześć! Zapraszam do Symulatora Lotto! Zasady są proste: wpisz liczbę od 1 do 49 i zatwierdź. \nPo zebraniu 6 liczb wylosujemy dla ciebie liczby i porównamy. Kupon od 3 liczb w górę wygrywa! \nMiłej zabawy!");
 
         int[] userCoupon = numbersInput();
 
@@ -16,14 +17,9 @@ public class LottoSimulator {
 
         tableSorter(numbersToGuess);
 
-        for (int elements : numbersToGuess) {
-            System.out.println(elements);
-        }
-
         lotteryChecker(userCoupon, numbersToGuess);
 
-
-        // modul escape - pozwala na opuszczenie gry
+        System.out.println("Dzięki za grę, do następnego!");
 
     }
 
@@ -83,7 +79,6 @@ public class LottoSimulator {
         Random lotteryNumbers = new Random();
         for (int i = 0; i < 6;) {
                 int temp = lotteryNumbers.nextInt(49) + 1;
-                System.out.println("Losowa liczba: " + temp);
                     int error = 0;
                     for (int j = 0; j < i; j++) {
                         if (temp == numbersTable[j]) {
@@ -100,6 +95,8 @@ public class LottoSimulator {
 // moduł porównawczy - porównuje tabele i zwraca odpowiedni rezultat.
     static void lotteryChecker(int[] userTable, int[] lotteryTable) {
         int correctNumbersCount = 0;
+        System.out.println("Twoje liczby: " + Arrays.toString(userTable));
+        System.out.println("Wylosowane liczby: " + Arrays.toString(lotteryTable));
         for (int i = 0; i < userTable.length; i++) {
             for (int j = 0; j < lotteryTable.length; j++) {
                 if (userTable[i] == lotteryTable[j]) {
@@ -110,12 +107,8 @@ public class LottoSimulator {
         if (correctNumbersCount >= 3) {
             System.out.println("Brawo! Trafiłeś " + correctNumbersCount + "! Szczęście ci dopisuje! ;)");
         } else {
-            System.out.println("Ojej, nie udało ci się :( Trafiłeś tylko " + correctNumbersCount + ". Może spróbuj jeszcze raz?");
+            System.out.println("Ojej, nie udało ci się :( Trafiłeś " + correctNumbersCount + " liczb. Może spróbuj jeszcze raz?");
         }
-    }
-
-    static void quitTheGame() {
-
     }
 
 }

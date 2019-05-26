@@ -3,7 +3,6 @@ package michalsurowiec.workshops;
 import java.util.Random;
 import java.util.Scanner;
 
-//version 1.0.0.
 
 public class GuessNumber {
 
