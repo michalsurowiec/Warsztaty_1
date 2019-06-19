@@ -1,4 +1,4 @@
-package michalsurowiec.workshops;
+package michalsurowiec.LottoSimulator;
 
 import java.util.Arrays;
 import java.util.Random;

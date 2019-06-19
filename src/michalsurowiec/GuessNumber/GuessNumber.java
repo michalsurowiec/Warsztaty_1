@@ -1,4 +1,4 @@
-package michalsurowiec.workshops;
+package michalsurowiec.GuessNumber;
 
 import java.util.Random;
 import java.util.Scanner;
