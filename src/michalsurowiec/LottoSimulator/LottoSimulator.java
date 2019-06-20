@@ -25,9 +25,9 @@ public class LottoSimulator {
 
     // Metoda służy do pobrania od usera liczb, sprawdzenia ich poprawności i stworzenia z nich tabeli.
     static int[] numbersInput() {
-        Scanner console = new Scanner(System.in);
         int[] numbersTable = new int [6];
         for (int i = 0; i < 6;) {
+            Scanner console = new Scanner(System.in);
             System.out.println("\nWpisz liczbę");
             //Tu jest pobierana liczba od usera i automatycznie sprawdzana. Jeżeli przejdzie test, jest zapisywana w zmiennej dla dalszego przetworzenia.
             if (console.hasNextInt()) {
@@ -53,8 +53,6 @@ public class LottoSimulator {
                 }
             } else {
                 System.out.println("Źle! Nie wpisałeś liczby całkowitej. Wpisz liczbę.");
-                //To służy do czyszczenia z konsoli ze wszystkiego, co zostało wpisane, na podstawie założenia, że skoro to nie jest liczbą, to na pewno tego nie potrzebujemy.
-                String trashBin = console.nextLine();
             }
         }
         return numbersTable;
