@@ -169,3 +169,4 @@ local.properties
 .idea/**
 out/**
 *.iml
+filtered_popular_words.txt
