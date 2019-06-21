@@ -17,9 +17,11 @@ Tym razem to my typujemy liczbę, a komputer ma na celu odgadnięcie liczby. Pom
 
 ## Kostka do gry
 Jest to symulator kostki do gry, w którym możemy rzucać pewną ilość razów pewnym rodzajem kostki z ewentualnym dodatkiem pewnych atrybutów. W celu poprawnego działania symulatora wykorzystuje się schemat `xDy+z`, który się wpisuje do konsoli. Oznacza to:
+
 * x - ilosć rzutów kostką,
 * y - typ kostki (dopuszczalne w grze są kostki z 3, 4, 6, 8, 10, 12, 20 lub 100 ścianami),
 * z - dodatkowy atrybut do wyniku całkowitego; dzięki niemu można dodawać lub odejmować od wyniku całkowitego.
+
 Schemat nie jest sztywny. Akceptuje również brak x (uznaje wtedy, że wykonywany jest 1 rzut), a także można pominąć wpisywanie atrybutu (wtedy nie wpisujemy znaku działania i z).
 Po sprawdzeniu poprawności wpisanej przez nas wartości, program rzuca kostką zgodnie z podanymi przez nas instrukcjami i zwraca wynik całkowity.
 
